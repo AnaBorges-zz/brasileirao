@@ -7,16 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7004A89723E0B8B3002B0092 /* JogoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7004A89623E0B8B3002B0092 /* JogoModel.swift */; };
+		7004A8A123E0D1F7002B0092 /* Requisitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7004A8A023E0D1F7002B0092 /* Requisitions.swift */; };
+		7004A8A323E1D764002B0092 /* TabelaJogosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7004A8A223E1D764002B0092 /* TabelaJogosController.swift */; };
+		701D5FA223E8BD3900A21324 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D5FA123E8BD3900A21324 /* extensions.swift */; };
+		701D5FA523E9EAC800A21324 /* FichaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D5FA423E9EAC800A21324 /* FichaModel.swift */; };
 		706A8D1B23DA304600A14897 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A8D1A23DA304600A14897 /* AppDelegate.swift */; };
 		706A8D1D23DA304600A14897 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A8D1C23DA304600A14897 /* SceneDelegate.swift */; };
-		706A8D1F23DA304600A14897 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A8D1E23DA304600A14897 /* ViewController.swift */; };
+		706A8D1F23DA304600A14897 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A8D1E23DA304600A14897 /* LoginController.swift */; };
 		706A8D2223DA304600A14897 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706A8D2023DA304600A14897 /* Main.storyboard */; };
 		706A8D2423DA304700A14897 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 706A8D2323DA304700A14897 /* Assets.xcassets */; };
 		706A8D2723DA304700A14897 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706A8D2523DA304700A14897 /* LaunchScreen.storyboard */; };
 		706A8D3223DA304800A14897 /* brasileiraoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A8D3123DA304800A14897 /* brasileiraoTests.swift */; };
 		706A8D3D23DA304800A14897 /* brasileiraoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A8D3C23DA304800A14897 /* brasileiraoUITests.swift */; };
-		70AA8ED423DB36F100E4E63C /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA8ED323DB36F100E4E63C /* MainController.swift */; };
-		70AA8ED623DB636600E4E63C /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA8ED523DB636500E4E63C /* RoundButton.swift */; };
+		70BA613F23E30FC000C51677 /* JogosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BA613E23E30FC000C51677 /* JogosTableViewCell.swift */; };
+		70C392F323EDC203005FC592 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C392F223EDC203005FC592 /* LoginRequest.swift */; };
+		70C392F523EDC333005FC592 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C392F423EDC333005FC592 /* LoginResponse.swift */; };
+		70C392F723F1B6C4005FC592 /* LanceALanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C392F623F1B6C4005FC592 /* LanceALanceController.swift */; };
+		70C392F923F1CCD5005FC592 /* LanceALanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C392F823F1CCD5005FC592 /* LanceALanceModel.swift */; };
+		70C392FB23F2EE6B005FC592 /* LanceaLanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C392FA23F2EE6B005FC592 /* LanceaLanceTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +46,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7004A89623E0B8B3002B0092 /* JogoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogoModel.swift; sourceTree = "<group>"; };
+		7004A8A023E0D1F7002B0092 /* Requisitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requisitions.swift; sourceTree = "<group>"; };
+		7004A8A223E1D764002B0092 /* TabelaJogosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabelaJogosController.swift; sourceTree = "<group>"; };
+		701D5FA123E8BD3900A21324 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		701D5FA423E9EAC800A21324 /* FichaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaModel.swift; sourceTree = "<group>"; };
 		706A8D1723DA304600A14897 /* brasileirao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brasileirao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		706A8D1A23DA304600A14897 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		706A8D1C23DA304600A14897 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		706A8D1E23DA304600A14897 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		706A8D1E23DA304600A14897 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		706A8D2123DA304600A14897 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		706A8D2323DA304700A14897 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		706A8D2623DA304700A14897 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,8 +65,12 @@
 		706A8D3823DA304800A14897 /* brasileiraoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = brasileiraoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		706A8D3C23DA304800A14897 /* brasileiraoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brasileiraoUITests.swift; sourceTree = "<group>"; };
 		706A8D3E23DA304800A14897 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		70AA8ED323DB36F100E4E63C /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
-		70AA8ED523DB636500E4E63C /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		70BA613E23E30FC000C51677 /* JogosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogosTableViewCell.swift; sourceTree = "<group>"; };
+		70C392F223EDC203005FC592 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		70C392F423EDC333005FC592 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		70C392F623F1B6C4005FC592 /* LanceALanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanceALanceController.swift; sourceTree = "<group>"; };
+		70C392F823F1CCD5005FC592 /* LanceALanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanceALanceModel.swift; sourceTree = "<group>"; };
+		70C392FA23F2EE6B005FC592 /* LanceaLanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanceaLanceTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,11 +98,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7004A89323E0B658002B0092 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7004A89623E0B8B3002B0092 /* JogoModel.swift */,
+				701D5FA423E9EAC800A21324 /* FichaModel.swift */,
+				70C392F223EDC203005FC592 /* LoginRequest.swift */,
+				70C392F423EDC333005FC592 /* LoginResponse.swift */,
+				70C392F823F1CCD5005FC592 /* LanceALanceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7034145623F2F46600F7E342 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				70BA613E23E30FC000C51677 /* JogosTableViewCell.swift */,
+				70C392FA23F2EE6B005FC592 /* LanceaLanceTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		706A8D0E23DA304600A14897 = {
 			isa = PBXGroup;
 			children = (
-				70AA8ED523DB636500E4E63C /* RoundButton.swift */,
+				7004A89323E0B658002B0092 /* Models */,
 				706A8D1923DA304600A14897 /* brasileirao */,
+				7034145623F2F46600F7E342 /* Cell */,
 				706A8D3023DA304800A14897 /* brasileiraoTests */,
 				706A8D3B23DA304800A14897 /* brasileiraoUITests */,
 				706A8D1823DA304600A14897 /* Products */,
@@ -104,6 +144,8 @@
 		706A8D1923DA304600A14897 /* brasileirao */ = {
 			isa = PBXGroup;
 			children = (
+				701D5FA123E8BD3900A21324 /* extensions.swift */,
+				7004A8A023E0D1F7002B0092 /* Requisitions.swift */,
 				706A8D1A23DA304600A14897 /* AppDelegate.swift */,
 				706A8D1C23DA304600A14897 /* SceneDelegate.swift */,
 				706A8D2323DA304700A14897 /* Assets.xcassets */,
@@ -136,8 +178,9 @@
 		70AA8ED123DB30CD00E4E63C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				70AA8ED323DB36F100E4E63C /* MainController.swift */,
-				706A8D1E23DA304600A14897 /* ViewController.swift */,
+				706A8D1E23DA304600A14897 /* LoginController.swift */,
+				7004A8A223E1D764002B0092 /* TabelaJogosController.swift */,
+				70C392F623F1B6C4005FC592 /* LanceALanceController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -281,11 +324,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70AA8ED423DB36F100E4E63C /* MainController.swift in Sources */,
-				70AA8ED623DB636600E4E63C /* RoundButton.swift in Sources */,
-				706A8D1F23DA304600A14897 /* ViewController.swift in Sources */,
+				7004A89723E0B8B3002B0092 /* JogoModel.swift in Sources */,
+				706A8D1F23DA304600A14897 /* LoginController.swift in Sources */,
+				70C392F323EDC203005FC592 /* LoginRequest.swift in Sources */,
+				701D5FA523E9EAC800A21324 /* FichaModel.swift in Sources */,
+				70C392F723F1B6C4005FC592 /* LanceALanceController.swift in Sources */,
+				70C392F523EDC333005FC592 /* LoginResponse.swift in Sources */,
+				70C392F923F1CCD5005FC592 /* LanceALanceModel.swift in Sources */,
 				706A8D1B23DA304600A14897 /* AppDelegate.swift in Sources */,
+				70C392FB23F2EE6B005FC592 /* LanceaLanceTableViewCell.swift in Sources */,
+				70BA613F23E30FC000C51677 /* JogosTableViewCell.swift in Sources */,
+				701D5FA223E8BD3900A21324 /* extensions.swift in Sources */,
+				7004A8A323E1D764002B0092 /* TabelaJogosController.swift in Sources */,
 				706A8D1D23DA304600A14897 /* SceneDelegate.swift in Sources */,
+				7004A8A123E0D1F7002B0092 /* Requisitions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginController.swift
 //  brasileirao
 //
 //  Created by Ana Julia on 1/23/20.
@@ -8,26 +8,31 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginController: UIViewController {
         
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var labelErrorLogin: UILabel!
     
+    static var token : [LoginResponse] = []
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func buttonLogin(_ sender: Any) {
         let email = emailTextField.text;
         let password = passwordTextField.text;
         
-        if(email == "maria@g.globo" && password=="carmo"){
-            performSegue(withIdentifier: "mainSegue" , sender: self)
-            //exibirAlerta(messagem: "Logado");
+        if(email != "" && password != ""){
+
+            Requisitions.loginAutentication(user: email!, password: password!, onComplete: {(token) in
+                LoginController.token = token
+                    
+            })
+            performSegue(withIdentifier: "tabelaJogosSegue", sender: self)
         }
-        else if(email == "" || password == ""){
+        else if(email!.isEmpty || password!.isEmpty){
             labelErrorLogin.text = "Preencha todos os campos!"
             labelErrorLogin.isHidden = false;
         }
@@ -40,13 +45,5 @@ class ViewController: UIViewController {
 
         
     }
-    
-    /*func exibirAlerta(messagem: String){
-        let alerta = UIAlertController(title: "Alerta", message: (messagem), preferredStyle: UIAlertController.Style.alert);
-    
-        alerta.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil));
-    
-        self.present(alerta, animated: true, completion: nil);
-    }*/
 }
 
