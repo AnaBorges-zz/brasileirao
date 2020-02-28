@@ -10,13 +10,18 @@
 		7004A89723E0B8B3002B0092 /* JogoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7004A89623E0B8B3002B0092 /* JogoModel.swift */; };
 		7004A8A123E0D1F7002B0092 /* Requisitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7004A8A023E0D1F7002B0092 /* Requisitions.swift */; };
 		7004A8A323E1D764002B0092 /* TabelaJogosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7004A8A223E1D764002B0092 /* TabelaJogosController.swift */; };
+		700F0AD023F46B8A004C6CA5 /* RouteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700F0ACF23F46B8A004C6CA5 /* RouteAPI.swift */; };
+		700F0AD223F46CC8004C6CA5 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700F0AD123F46CC8004C6CA5 /* AppRoute.swift */; };
+		700F0AD423F471C7004C6CA5 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700F0AD323F471C7004C6CA5 /* APIClient.swift */; };
+		700F0AD823F70331004C6CA5 /* FichaJogoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700F0AD723F70331004C6CA5 /* FichaJogoTableViewCell.swift */; };
 		701D5FA223E8BD3900A21324 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D5FA123E8BD3900A21324 /* extensions.swift */; };
 		701D5FA523E9EAC800A21324 /* FichaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D5FA423E9EAC800A21324 /* FichaModel.swift */; };
+		702314E323F31052000EFED5 /* Imagens.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 702314E223F31052000EFED5 /* Imagens.xcassets */; };
+		702314E523F328CC000EFED5 /* enumTiposJogadas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702314E423F328CC000EFED5 /* enumTiposJogadas.swift */; };
 		706A8D1B23DA304600A14897 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A8D1A23DA304600A14897 /* AppDelegate.swift */; };
 		706A8D1D23DA304600A14897 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A8D1C23DA304600A14897 /* SceneDelegate.swift */; };
 		706A8D1F23DA304600A14897 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A8D1E23DA304600A14897 /* LoginController.swift */; };
 		706A8D2223DA304600A14897 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706A8D2023DA304600A14897 /* Main.storyboard */; };
-		706A8D2423DA304700A14897 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 706A8D2323DA304700A14897 /* Assets.xcassets */; };
 		706A8D2723DA304700A14897 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706A8D2523DA304700A14897 /* LaunchScreen.storyboard */; };
 		706A8D3223DA304800A14897 /* brasileiraoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A8D3123DA304800A14897 /* brasileiraoTests.swift */; };
 		706A8D3D23DA304800A14897 /* brasileiraoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A8D3C23DA304800A14897 /* brasileiraoUITests.swift */; };
@@ -49,14 +54,19 @@
 		7004A89623E0B8B3002B0092 /* JogoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogoModel.swift; sourceTree = "<group>"; };
 		7004A8A023E0D1F7002B0092 /* Requisitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requisitions.swift; sourceTree = "<group>"; };
 		7004A8A223E1D764002B0092 /* TabelaJogosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabelaJogosController.swift; sourceTree = "<group>"; };
+		700F0ACF23F46B8A004C6CA5 /* RouteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteAPI.swift; sourceTree = "<group>"; };
+		700F0AD123F46CC8004C6CA5 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
+		700F0AD323F471C7004C6CA5 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		700F0AD723F70331004C6CA5 /* FichaJogoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaJogoTableViewCell.swift; sourceTree = "<group>"; };
 		701D5FA123E8BD3900A21324 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		701D5FA423E9EAC800A21324 /* FichaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaModel.swift; sourceTree = "<group>"; };
+		702314E223F31052000EFED5 /* Imagens.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Imagens.xcassets; sourceTree = "<group>"; };
+		702314E423F328CC000EFED5 /* enumTiposJogadas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enumTiposJogadas.swift; sourceTree = "<group>"; };
 		706A8D1723DA304600A14897 /* brasileirao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brasileirao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		706A8D1A23DA304600A14897 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		706A8D1C23DA304600A14897 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		706A8D1E23DA304600A14897 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		706A8D2123DA304600A14897 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		706A8D2323DA304700A14897 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		706A8D2623DA304700A14897 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		706A8D2823DA304700A14897 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		706A8D2D23DA304800A14897 /* brasileiraoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = brasileiraoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +125,7 @@
 			children = (
 				70BA613E23E30FC000C51677 /* JogosTableViewCell.swift */,
 				70C392FA23F2EE6B005FC592 /* LanceaLanceTableViewCell.swift */,
+				700F0AD723F70331004C6CA5 /* FichaJogoTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -144,11 +155,15 @@
 		706A8D1923DA304600A14897 /* brasileirao */ = {
 			isa = PBXGroup;
 			children = (
+				702314E423F328CC000EFED5 /* enumTiposJogadas.swift */,
 				701D5FA123E8BD3900A21324 /* extensions.swift */,
 				7004A8A023E0D1F7002B0092 /* Requisitions.swift */,
+				700F0AD123F46CC8004C6CA5 /* AppRoute.swift */,
+				700F0AD323F471C7004C6CA5 /* APIClient.swift */,
+				700F0ACF23F46B8A004C6CA5 /* RouteAPI.swift */,
+				702314E223F31052000EFED5 /* Imagens.xcassets */,
 				706A8D1A23DA304600A14897 /* AppDelegate.swift */,
 				706A8D1C23DA304600A14897 /* SceneDelegate.swift */,
-				706A8D2323DA304700A14897 /* Assets.xcassets */,
 				706A8D2523DA304700A14897 /* LaunchScreen.storyboard */,
 				706A8D2823DA304700A14897 /* Info.plist */,
 				70AA8ED223DB30F500E4E63C /* Telas */,
@@ -297,8 +312,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				702314E323F31052000EFED5 /* Imagens.xcassets in Resources */,
 				706A8D2723DA304700A14897 /* LaunchScreen.storyboard in Resources */,
-				706A8D2423DA304700A14897 /* Assets.xcassets in Resources */,
 				706A8D2223DA304600A14897 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,7 +341,10 @@
 			files = (
 				7004A89723E0B8B3002B0092 /* JogoModel.swift in Sources */,
 				706A8D1F23DA304600A14897 /* LoginController.swift in Sources */,
+				700F0AD023F46B8A004C6CA5 /* RouteAPI.swift in Sources */,
 				70C392F323EDC203005FC592 /* LoginRequest.swift in Sources */,
+				700F0AD823F70331004C6CA5 /* FichaJogoTableViewCell.swift in Sources */,
+				700F0AD223F46CC8004C6CA5 /* AppRoute.swift in Sources */,
 				701D5FA523E9EAC800A21324 /* FichaModel.swift in Sources */,
 				70C392F723F1B6C4005FC592 /* LanceALanceController.swift in Sources */,
 				70C392F523EDC333005FC592 /* LoginResponse.swift in Sources */,
@@ -338,6 +356,8 @@
 				7004A8A323E1D764002B0092 /* TabelaJogosController.swift in Sources */,
 				706A8D1D23DA304600A14897 /* SceneDelegate.swift in Sources */,
 				7004A8A123E0D1F7002B0092 /* Requisitions.swift in Sources */,
+				702314E523F328CC000EFED5 /* enumTiposJogadas.swift in Sources */,
+				700F0AD423F471C7004C6CA5 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

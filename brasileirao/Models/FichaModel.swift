@@ -10,7 +10,7 @@ import Foundation
 
 struct FichaModel: Codable{
     let timeCasa: TimeFicha
-    let timeVisita: TimeFicha
+    let timeVisitante: TimeFicha
 }
 
 struct TimeFicha: Codable{

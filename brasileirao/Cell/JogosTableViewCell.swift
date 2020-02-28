@@ -22,9 +22,6 @@ class JogosTableViewCell: UITableViewCell{
     @IBOutlet var escudoCasa: UIImageView!
     @IBOutlet var escudoVisita: UIImageView!
     
-    @IBAction func maisDetalhes(_ sender: Any) {
-        
-    }
     var id: Int = Int.min
 
     func prepare (with jogo: JogoModel){

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum geralError {
+/*enum geralError {
     case url
     case taskError (error: Error)
     case noResponse
@@ -28,114 +28,107 @@ class Requisitions {
     
     private static let session = URLSession(configuration:configuration)
     
-    class func loadJogos(rodada: Int, token: [LoginResponse], onComplete: @escaping ([JogoModel]) -> Void,  onError: @escaping (geralError) -> Void){
-        guard let url = URL(string: basePath + "jogos/" + String(rodada)) else {
-            onError(.url)
-            return
-        }
-        
-        var request = URLRequest(url:url)
-        request.httpMethod = "GET"
-        request.setValue(token.first?.token, forHTTPHeaderField: "token")
-        print("token loadJogos: \(token.first?.token)")
-
-
-        let dataTask = session.dataTask(with: url) {(data: Data?, response: URLResponse?, error: Error?) in
-            
-            if error == nil {
-                
-                guard let response = response as? HTTPURLResponse else {
-                    onError(.noResponse)
-                    return
-                }
-                
-                if response.statusCode == 200{
-                    
-                    guard let data = data else {return}
-                    do{
-                        let jogos = try JSONDecoder().decode([JogoModel].self, from: data)
-                        onComplete(jogos)
-                        
-                    } catch {
-                        print(">>>>>> \(error)")
-                        onError(.invalidJSON)
-                    }
-                }
-                else{
-                    onError(.responseStatusCode(code: response.statusCode))
-                }
-                
-            } else {
-                onError(.taskError(error: error!))
-            }
-            
-        }
-        dataTask.resume()
-    }
     
-    class func loginAutentication(user: String, password:String, onComplete: @escaping ([LoginResponse]) -> Void){
-        let login = Login(login: user, password: password)
-        
-        guard let url = URL(string: basePath + "login") else {
-            print("deu ruim")
-            return
-        }
-        
-        var request = URLRequest(url:url)
-        request.httpMethod = "POST"
-        
-        do{
-            request.httpBody = try JSONEncoder().encode(login)
-        } catch let error{
-            print("erro \(error)")
-            return
-        }
-        
-        let dataTask = session.dataTask(with: request) { (data, response, error) in
-            if error == nil{
-                guard let response = response as? HTTPURLResponse else{
-                    print("não funfou")
-                    return
-                }
-                
-                if response.statusCode == 200 {
-                    guard let data = data else{
-                        return
-                    }
-                    
-                    do{
-                        let token = try JSONDecoder().decode([LoginResponse].self, from: data)
-
-                        print(token)
-                        let acessToken = token
-                        onComplete(acessToken)
-                                                                      
-                    } catch {
-                        print(">>>>>> \(error)")
-                    }
-                    
-                }
-                else {
-                    print(response.statusCode)
-                }
-            }
-        }
-        dataTask.resume()
-    }
+//    class func loadJogos(rodada: Int, onComplete: @escaping ([JogoModel]) -> Void,  onError: @escaping (geralError) -> Void){
+//        guard let url = URL(string: basePath + "jogos/" + String(rodada)) else {
+//            onError(.url)
+//            return
+//        }
+//        
+//        var request = URLRequest(url:url)
+//        request.httpMethod = "GET"
+//        request.setValue(UserDefaults.standard.string(forKey: "token"), forHTTPHeaderField: "token")
+//
+//        let dataTask = session.dataTask(with: url) {(data: Data?, response: URLResponse?, error: Error?) in
+//            
+//            if error == nil {
+//                
+//                guard let response = response as? HTTPURLResponse else {
+//                    onError(.noResponse)
+//                    return
+//                }
+//                
+//                if response.statusCode == 200{
+//                    
+//                    guard let data = data else {return}
+//                    do{
+//                        let jogos = try JSONDecoder().decode([JogoModel].self, from: data)
+//                        onComplete(jogos)
+//                        
+//                    } catch {
+//                        print(">>>>>> \(error)")
+//                        onError(.invalidJSON)
+//                    }
+//                }
+//                else{
+//                    onError(.responseStatusCode(code: response.statusCode))
+//                }
+//                
+//            } else {
+//                onError(.taskError(error: error!))
+//            }
+//            
+//        }
+//        dataTask.resume()
+//    }
+//    
     
-    class func loadLanceLance(idJogo: Int, token: [LoginResponse], onComplete: @escaping ([LanceALanceModel]) -> Void,  onError: @escaping (geralError) -> Void){
+//    class func loginAutentication(user: String, password:String){
+//        let login = Login(login: user, password: password)
+//
+//        guard let url = URL(string: basePath + "login") else {
+//            print("deu ruim")
+//            return
+//        }
+//
+//        var request = URLRequest(url:url)
+//        request.httpMethod = "POST"
+//
+//        do{
+//            request.httpBody = try JSONEncoder().encode(login)
+//        } catch let error{
+//            print("erro \(error)")
+//            return
+//        }
+//
+//        let dataTask = session.dataTask(with: request) { (data, response, error) in
+//            if error == nil{
+//                guard let response = response as? HTTPURLResponse else{
+//                    print("não funfou")
+//                    return
+//                }
+//
+//                if response.statusCode == 200 {
+//                    guard let data = data else{
+//                        return
+//                    }
+//
+//                    do{
+//                        let token = try JSONDecoder().decode([LoginResponse].self, from: data)
+//
+//                        UserDefaults.standard.setValue(token.first?.token, forKey: "token")
+//
+//                    } catch {
+//                        print(">>>>>> \(error)")
+//                    }
+//
+//                }
+//                else {
+//                    print(response.statusCode)
+//                }
+//            }
+//        }
+//        dataTask.resume()
+    
+    class func loadLanceLance(idJogo: Int, onComplete: @escaping ([LanceALanceModel]) -> Void,  onError: @escaping (geralError) -> Void){
         guard let url = URL(string: basePath + "lances/" + String(idJogo)) else {
             onError(.url)
             return
         }
         
-        print(url)
-        
         var request = URLRequest(url:url)
         request.httpMethod = "GET"
-        request.setValue(token.first?.token, forHTTPHeaderField: "token")
-        print(token.first?.token)
-
+        request.setValue(UserDefaults.standard.string(forKey: "token"), forHTTPHeaderField: "token")
 
         let dataTask = session.dataTask(with: url) {(data: Data?, response: URLResponse?, error: Error?) in
             
@@ -152,7 +145,7 @@ class Requisitions {
                     do{
                         let lances = try JSONDecoder().decode([LanceALanceModel].self, from: data)
                         onComplete(lances)
-                        print(lances)
+
                     } catch {
                         print(">>>>>> \(error)")
                         onError(.invalidJSON)
@@ -169,6 +162,5 @@ class Requisitions {
         }
         dataTask.resume()
     }
-}
-
+}*/
 

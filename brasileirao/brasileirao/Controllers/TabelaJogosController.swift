@@ -12,8 +12,11 @@ class TabelaJogosController: UITableViewController{
     
     @IBOutlet var rodadasBar: UINavigationItem!
     
+    let apiClient = APIClient()
+
     var jogos : [JogoModel] = []
     var rodada: Int = 1
+    var jogoSelecionado: JogoModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,31 +40,34 @@ class TabelaJogosController: UITableViewController{
     func mudarRodada(rodada: Int){
         rodadasBar.title = "\(rodada)º rodada"
         
-        if rodada > 1 {
-            rodadasBar.leftBarButtonItem?.isEnabled = true
-        }
-        else{
-            rodadasBar.leftBarButtonItem?.isEnabled = false
-        }
+        rodadasBar.leftBarButtonItem?.isEnabled = rodada > 1
+        rodadasBar.rightBarButtonItem?.isEnabled = rodada < 3
+        
+        requisitionAPI()
+    }
     
+    func requisitionAPI(){
+        let route = AppRoute.jogos(rodada: rodada)
         
-        if rodada > 2{
-            rodadasBar.rightBarButtonItem?.isEnabled = false
-        }
-        else{
-            rodadasBar.rightBarButtonItem?.isEnabled = true
-        }
-        
-        
-        Requisitions.loadJogos(rodada: rodada, token: LoginController.token, onComplete: { (jogos) in
-            
-            self.jogos = jogos
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+        apiClient.request(route: route) { (data, error) in
+            if let error = error{
+                print(error)
+                return
             }
             
-        }) { (error) in
-            print(error)
+            guard let data = data else { return }
+            
+            do{
+                let jogos = try JSONDecoder().decode([JogoModel].self, from: data)
+                self.jogos = jogos
+                                                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+            catch{
+                print(error)
+            }
         }
     }
     
@@ -77,5 +83,23 @@ class TabelaJogosController: UITableViewController{
         cell.prepare(with: jogo)
         
         return cell
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if  segue.identifier == "detalheJogo"{
+            let destination = segue.destination as? LanceALanceController
+            
+            guard let destiny = destination else {return}
+            guard let jogoSelected = jogoSelecionado else {return}
+
+            destiny.jogoSelecionado = jogoSelected
+            destiny.idJogo = jogoSelected.id
+
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        jogoSelecionado = jogos[indexPath.row]
+        performSegue(withIdentifier: "detalheJogo", sender: self)
     }
 }
