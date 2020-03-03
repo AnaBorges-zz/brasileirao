@@ -251,7 +251,7 @@ class LanceALanceController: UITableViewController{
                 
                 cell.prepareJogador(jogadorCasa, jogadorVisitante)
             
-            return cell
+                return cell
             }
         
         }

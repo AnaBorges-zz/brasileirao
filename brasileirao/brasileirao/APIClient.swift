@@ -8,6 +8,13 @@
 
 import Foundation
 
+enum APIError: Error {
+    case urlParse
+    case castUrlResponse
+    case notFound
+    case undefined
+}
+
 class APIClient{
     private let basePath = "https://private-62ae5-brasileirao8.apiary-mock.com/"
     
@@ -17,12 +24,11 @@ class APIClient{
         return URLSession(configuration: config)
     }()
     
-    func request(route: AppRoute, completion: @escaping (_ data: Data?, _ error: Error?) -> Void) {
+    func request(route: AppRoute, completion: @escaping (_ data: Data?, _ error: APIError?) -> Void) {
         
         guard let url = URL(string: basePath + route.path) else {
-            print("deu ruim")
             let error = NSError(domain: "com.myCompany.brasileirao", code: 500, userInfo: nil)
-            completion(nil, error)
+            completion(nil, APIError.urlParse)
             return
         }
                
@@ -35,13 +41,12 @@ class APIClient{
         
        let dataTask = session.dataTask(with: request) { (data, response, error) in
            if error != nil {
-                print("não funfou")
-                completion(nil, error)
+            completion(nil, error as! APIError)
                 return
         }
         
         guard let response = response as? HTTPURLResponse else {
-            completion(nil, error)
+            completion(nil, APIError.castUrlResponse)
             return
         }
 
@@ -49,8 +54,12 @@ class APIClient{
                     completion(data, nil)
                }
                else {
-                print(response.statusCode)
-                completion(nil, error)
+                    switch response.statusCode {
+                        case 404:
+                            completion(nil, APIError.notFound)
+                        default:
+                            completion(nil, APIError.undefined)
+                    }
                 return
             }
            

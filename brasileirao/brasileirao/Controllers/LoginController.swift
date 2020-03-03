@@ -33,6 +33,14 @@ class LoginController: UIViewController {
             apiClient.request(route: route) { (data, error) in
                 if let error = error {
                     print(error)
+                    
+                    if error == APIError.notFound {
+                        DispatchQueue.main.async {
+                            self.labelErrorLogin.text = "Usuário ou senha incorretos!"
+                            self.labelErrorLogin.isHidden = false;
+                        }
+                    }
+                    
                     return
                 }
                 
@@ -47,20 +55,15 @@ class LoginController: UIViewController {
                         self.performSegue(withIdentifier: "tabelaJogosSegue", sender: self)
                     }
                 } catch {
-                    print(">>>>>> \(error)")
+                    print(error)
                 }
             }
             
         }
-        else if(email.isEmpty || password.isEmpty){
+        else {
             labelErrorLogin.text = "Preencha todos os campos!"
             labelErrorLogin.isHidden = false;
         }
-        else{
-            labelErrorLogin.text = "Usuário ou senha incorretos!"
-            labelErrorLogin.isHidden = false;
-        }
-        
     }
 }
 

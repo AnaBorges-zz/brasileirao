@@ -31,8 +31,5 @@ class FichaJogoTableViewCell : UITableViewCell {
         
     }
     
-    func prepareInformacoes (with jogador: FichaModel) {
-        
-    }
 }
 
