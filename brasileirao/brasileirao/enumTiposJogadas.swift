@@ -17,12 +17,18 @@ enum TipoJogadas{
     case FIMJOGO
     
     var image: UIImage {
+        guard let cartaoAmarelo = UIImage(named: "cartaoAmarelo.png") else {return UIImage()}
+        guard let cartaoVermelho = UIImage(named: "cartaoVermelho.png") else {return UIImage()}
+        guard let substituicao = UIImage(named: "iconeSubstituicao.png") else {return UIImage()}
+        guard let fimJogo = UIImage(named: "iconeApito.png") else {return UIImage()}
+        guard let gol = UIImage(named: "iconeGol.png") else {return UIImage()}
+        
         switch self {
-            case .AMARELO: return UIImage(named: "cartaoAmarelo.png")!
-            case .VERMELHO: return UIImage(named: "cartaoVermelho.png")!
-            case .SUBSTITUICAO: return UIImage(named: "iconeSubstituicao.png")!
-            case .FIMJOGO: return UIImage(named: "iconeApito.png")!
-            case .GOL: return UIImage(named: "iconeGol.png")!
+            case .AMARELO: return cartaoAmarelo
+            case .VERMELHO: return cartaoVermelho
+            case .SUBSTITUICAO: return substituicao
+            case .FIMJOGO: return fimJogo
+            case .GOL: return gol
         }
     }
 }

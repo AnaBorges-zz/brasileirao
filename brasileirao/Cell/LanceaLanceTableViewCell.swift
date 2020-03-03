@@ -6,7 +6,6 @@
 //  Copyright © 2020 Ana Julia. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 
@@ -23,8 +22,11 @@ class LanceaLanceTableViewCell: UITableViewCell {
     
     func prepare(with lance: LanceALanceModel){
         if self.reuseIdentifier == "cellLanceSubstituicao"{
-            nomeNovoJogodor.text = (lance.novo_jogador as! String)
-            posicaoNovoJogador.text = lance.nova_posicao as! String
+            guard let novoJogador = lance.novo_jogador else {return}
+            guard let novaPosicao = lance.nova_posicao else {return}
+            
+            nomeNovoJogodor.text = novoJogador
+            posicaoNovoJogador.text = novaPosicao
         }
         else if self.reuseIdentifier == "cellLanceFimJogo"{
             minuto.text = "\(lance.minuto)'"

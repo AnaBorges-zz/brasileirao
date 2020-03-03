@@ -6,7 +6,6 @@
 //  Copyright © 2020 Ana Julia. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class FichaJogoTableViewCell : UITableViewCell {
@@ -21,7 +20,7 @@ class FichaJogoTableViewCell : UITableViewCell {
     @IBOutlet var informacaoAdicionalVisitante: UILabel!
     @IBOutlet var informacaoAdicionalVisitanteLabel: UILabel!
     
-    func prepareJogador (jogadorCasa : Jogador, jogadorVisitante : Jogador) {
+    func prepareJogador (_ jogadorCasa : Jogador, _ jogadorVisitante : Jogador) {
         nomeJogadorCasa.text = jogadorCasa.nome
         numeroJogadorCasa.text = String (jogadorCasa.camisa)
         posicaoJogadorCasa.text = jogadorCasa.posicao.uppercased()
@@ -33,6 +32,7 @@ class FichaJogoTableViewCell : UITableViewCell {
     }
     
     func prepareInformacoes (with jogador: FichaModel) {
+        
     }
 }
 

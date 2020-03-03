@@ -1,5 +1,5 @@
 //
-//  FichaController.swift
+//  LanceALanceController.swift
 //  brasileirao
 //
 //  Created by Ana Julia on 2/10/20.
@@ -17,7 +17,8 @@ class LanceALanceController: UITableViewController{
     @IBOutlet var golsCasa: UILabel!
     @IBOutlet var golsVisitante: UILabel!
     @IBOutlet var segmentedControlDetalhes: UISegmentedControl!
-
+    @IBOutlet var header: UIView!
+    
     var apiClient = APIClient()
     
     var idJogo: Int = 1
@@ -26,7 +27,7 @@ class LanceALanceController: UITableViewController{
     var lances : [LanceALanceModel] = []
     var ficha : FichaModel?
     
-    var segmentSelected : Int = 1
+    var segmentSelected : Int = 0
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,11 +42,11 @@ class LanceALanceController: UITableViewController{
     @IBAction func indexChanged(_ sender: Any) {
         
         switch segmentedControlDetalhes.selectedSegmentIndex {
-        case 1:
-            segmentSelected = 1
+        case 0:
+            segmentSelected = 0
             requisitionLanceAPI()
         default:
-            segmentSelected = 0
+            segmentSelected = 1
             requisitionFichaAPI()
         }
     }
@@ -132,29 +133,48 @@ class LanceALanceController: UITableViewController{
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if segmentSelected == 1 { return 1 }
-        else { return 2 }
+        if segmentSelected == 0 { return 1 }
+        else { return 3 }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         if numberOfSections(in: tableView) == 1 { return lances.count}
                 
-        if section == 0 { return 11 }
-        if section == 1 { return 12 }
-        //if section == 3 { return 2 }
-        
-        return 1
-        
+        switch section {
+            case 0:
+                return 2
+            case 1:
+                return 11
+            case 2:
+                return 12
+            default:
+                return  1
+        }
     }
     
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 { return "Titulares" }
-        if section == 1 { return "Reservas" }
-        //if section == 3 { return "Informações adicionais" }
         
-        else {return "Algo de errado Aconteceu"}
+        if segmentSelected == 0 { return nil }
+        switch section {
+            case 0:
+                return "Informações Gerais"
+            case 1:
+                return "Titulares"
+            case 2:
+                return "Reservas"
+            default:
+                return "Sem título"
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor(red: 0.2, green: 0.64, blue: 0.3, alpha: 1)
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        header.textLabel?.textColor = UIColor.white
+        
     }
 
     
@@ -162,7 +182,7 @@ class LanceALanceController: UITableViewController{
         
         print (indexPath.section)
 
-        if segmentSelected == 1 {
+        if segmentSelected == 0 {
             let lance = lances[indexPath.row]
 
             var cellIdentfier = "cellLance"
@@ -174,7 +194,7 @@ class LanceALanceController: UITableViewController{
                 cellIdentfier = "cellLanceFimJogo"
             }
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentfier, for: indexPath) as! LanceaLanceTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentfier, for: indexPath) as? LanceaLanceTableViewCell else {return UITableViewCell()}
             
             cell.prepare(with: lance)
             
@@ -184,42 +204,57 @@ class LanceALanceController: UITableViewController{
 
         else {
             
-            if indexPath.section == 0 {
-                
-                let titularesCasa = (ficha?.timeCasa.jogadores[indexPath.row])!
-                let titularesVisitante = (ficha?.timeVisitante.jogadores[indexPath.row])!
-                
-                let cell = tableView.dequeueReusableCell(withIdentifier: "cellFichaJogador", for: indexPath) as! FichaJogoTableViewCell
-                
-                cell.prepareJogador(jogadorCasa: titularesCasa, jogadorVisitante: titularesVisitante)
-                
-                return cell
-
-            }
+            var titleCasa: String
+            var titleVisitante: String
+            var label: String
             
-            else {
-                let reservasCasa = (ficha?.timeCasa.reservas[indexPath.row])!
-                let reservasVisitante = (ficha?.timeVisitante.reservas[indexPath.row])!
-                
-                let cell = tableView.dequeueReusableCell(withIdentifier: "cellFichaJogador", for: indexPath) as! FichaJogoTableViewCell
-                
-                cell.prepareJogador(jogadorCasa: reservasCasa, jogadorVisitante: reservasVisitante)
-                
-                return cell
+            guard let fichaJogo = ficha else {return UITableViewCell()}
 
-            }
-           /* else {
-                //FAZER ESQUEMA E TÉCNICO APARECER
+            if indexPath.section == 0 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellFichaInformacaoAdicional", for: indexPath) as? FichaJogoInformacaoTableViewCell else {return UITableViewCell()}
                 
-                let cell = tableView.dequeueReusableCell(withIdentifier: "cellFichaInformacoesAdicionais", for: indexPath) as! FichaJogoTableViewCell
+                switch indexPath.row {
+                    case 0:
+                        titleCasa = fichaJogo.timeCasa.tecnico
+                        titleVisitante = fichaJogo.timeVisitante.tecnico
+                        label = "Técnico"
+
+                    default:
+                        titleCasa = fichaJogo.timeCasa.esquema
+                        titleVisitante = fichaJogo.timeVisitante.esquema
+                        label = "Esquema"
+                }
                 
-                cell.prepareInformacoes(with: <#T##FichaModel#>)
+                cell.prepareInformacoes(titleCasa: titleCasa, titleVisitante: titleVisitante, label: label)
                 
                 return cell
+                            
             }
-            */
-        }
+                
+            else{
+            
+                var jogadorCasa : Jogador
+                var jogadorVisitante : Jogador
+                
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellFichaJogador", for: indexPath) as? FichaJogoTableViewCell else {return UITableViewCell()}
+                
+                switch indexPath.section {
+                    
+                    case 1:
+                        jogadorCasa = (fichaJogo.timeCasa.jogadores[indexPath.row])
+                        jogadorVisitante = (fichaJogo.timeVisitante.jogadores[indexPath.row])
+                        
+                    default:
+                        jogadorCasa = (fichaJogo.timeCasa.reservas[indexPath.row])
+                        jogadorVisitante = (fichaJogo.timeVisitante.reservas[indexPath.row])
+                }
+                
+                cell.prepareJogador(jogadorCasa, jogadorVisitante)
+            
+            return cell
+            }
         
+        }
         
     }
     

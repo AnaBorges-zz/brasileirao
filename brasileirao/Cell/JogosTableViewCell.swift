@@ -6,7 +6,6 @@
 //  Copyright © 2020 Ana Julia. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class JogosTableViewCell: UITableViewCell{

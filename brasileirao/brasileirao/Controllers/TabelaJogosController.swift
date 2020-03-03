@@ -94,7 +94,6 @@ class TabelaJogosController: UITableViewController{
 
             destiny.jogoSelecionado = jogoSelected
             destiny.idJogo = jogoSelected.id
-
         }
     }
 
