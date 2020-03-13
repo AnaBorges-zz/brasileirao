@@ -16,8 +16,8 @@ class FichaJogoInformacaoTableViewCell : UITableViewCell {
     @IBOutlet var informacaoAdicionalLabelVisitante: UILabel!
 
     
-    func prepareInformacoes (titleCasa titleCasa: String, titleVisitante titleVisitante: String, label label: String) {
-        
+    func prepareInformacoes (titleCasa: String, titleVisitante: String, label: String) {
+
         informacaoAdicionalLabelCasa.text = label.uppercased()
         informacaoAdicionalLabelVisitante.text = label.uppercased()
         informacaoAdicionalCasaTitle.text = titleCasa

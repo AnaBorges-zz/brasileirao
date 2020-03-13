@@ -10,8 +10,13 @@ import XCTest
 @testable import brasileirao
 
 class brasileiraoTests: XCTestCase {
+    
+    var tabelaJogosController : TabelaJogosController!
+    
 
     override func setUp() {
+        super.setUp()
+        _ = tabelaJogosController.view
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 

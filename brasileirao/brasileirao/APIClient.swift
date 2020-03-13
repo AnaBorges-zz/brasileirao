@@ -41,7 +41,7 @@ class APIClient{
         
        let dataTask = session.dataTask(with: request) { (data, response, error) in
            if error != nil {
-            completion(nil, error as! APIError)
+            completion(nil, error as? APIError)
                 return
         }
         
@@ -51,17 +51,20 @@ class APIClient{
         }
 
         if response.statusCode >= 200 && response.statusCode <= 299, let data = data {
-                    completion(data, nil)
-               }
-               else {
-                    switch response.statusCode {
-                        case 404:
-                            completion(nil, APIError.notFound)
-                        default:
-                            completion(nil, APIError.undefined)
-                    }
-                return
+            completion(data, nil)
+            print("response: \(response.statusCode)")
+        }
+       else {
+            
+            switch response.statusCode {
+                case 404:
+                    completion(nil, APIError.notFound)
+                default:
+                    completion(nil, APIError.undefined)
             }
+            
+        return
+    }
            
        }
        dataTask.resume()

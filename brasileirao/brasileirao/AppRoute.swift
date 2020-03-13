@@ -25,8 +25,6 @@ enum AppRoute : RouteAPI{
             return "/lances/\(jogo)"
         case let .ficha(jogo):
             return "/ficha/\(jogo)"
-        default:
-            return ""
         }
     }
     
