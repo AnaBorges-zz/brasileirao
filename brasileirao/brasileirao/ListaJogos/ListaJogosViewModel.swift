@@ -16,7 +16,7 @@ protocol ListaJogosViewModelProtocol: class{
     func proximaRodada()
     func rodadaAnterior()
     func selecionaJogo(index: Int)
-    init(apiClient: APIClient)
+    init(apiClient: APIClientProtocol)
 }
 
 protocol ListaJogosViewModelDelegate: class {
@@ -32,11 +32,11 @@ class ListaJogosViewModel : ListaJogosViewModelProtocol{
     var exibeVoltar: Bool = false
     var exibeAvancar: Bool = false
     
-    private let apiClient: APIClient
+    private let apiClient: APIClientProtocol
     
     weak var delegate : ListaJogosViewModelDelegate?
     
-    required init(apiClient: APIClient){
+    required init(apiClient: APIClientProtocol){
         self.apiClient = apiClient
     }
     

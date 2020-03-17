@@ -24,7 +24,6 @@ protocol DetalheJogoViewModelDelegate: class {
 }
 
 class DetalheJogoViewModel : DetalheJogoViewModelProtocol{
-    //var idJogo: Int = 1
     var lances: [LanceALanceModel] = []
     var ficha: FichaModel?
     var jogoSelecionado: JogoModel?
@@ -37,7 +36,6 @@ class DetalheJogoViewModel : DetalheJogoViewModelProtocol{
         self.apiClient = apiClient
         self.jogoSelecionado = jogo
         consultaLances()
-        
     }
 
     func consultaFicha() {
@@ -105,5 +103,4 @@ class DetalheJogoViewModel : DetalheJogoViewModelProtocol{
             }
         }
     }
-
 }

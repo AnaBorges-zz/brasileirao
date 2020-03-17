@@ -8,6 +8,13 @@
 
 import Foundation
 
+protocol RouteAPI{
+    var path: String { get }
+    var metod: String { get }
+    var headers: [String : Any] { get }
+    var parameters: [String : Any] { get }
+}
+
 enum AppRoute : RouteAPI{
     
     case login(login: String, password: String)

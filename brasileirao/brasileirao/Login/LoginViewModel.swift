@@ -13,7 +13,7 @@ protocol LoginViewModelProtocol: class {
     var senha: String? { get }
     var msgErro: String? { get }
     func logar(email: String, senha: String)
-    init(apiClient: APIClient)
+    init(apiClient: APIClientProtocol)
 }
 
 protocol LoginViewModelDelegate: class {
@@ -22,7 +22,7 @@ protocol LoginViewModelDelegate: class {
 
 class LoginViewModel : LoginViewModelProtocol{
     
-    private let apiClient : APIClient
+    private let apiClient : APIClientProtocol
     
     weak var delegate: LoginViewModelDelegate?
     
@@ -30,7 +30,7 @@ class LoginViewModel : LoginViewModelProtocol{
     var senha : String?
     var msgErro: String?
     
-    required init(apiClient: APIClient){
+    required init(apiClient: APIClientProtocol){
         self.apiClient = apiClient
     }
     
