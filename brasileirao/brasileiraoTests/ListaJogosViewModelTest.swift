@@ -10,13 +10,15 @@ import XCTest
 @testable import brasileirao
 
 class ListaJogosViewModelTest : XCTestCase {
+    var apiClientMock: APIClientMock!
+    
     var sut: ListaJogosViewModel!
     
     override func setUp() {
         super.setUp()
         
-        let apiClient = APIClientMock()
-        sut = ListaJogosViewModel(apiClient: apiClient)
+        apiClientMock = APIClientMock()
+        sut = ListaJogosViewModel(apiClient: apiClientMock)
     }
     
     override func tearDown() {
@@ -43,6 +45,19 @@ class ListaJogosViewModelTest : XCTestCase {
     func testAvancarDesabilitado(){
         sut.rodada = 3
         XCTAssertEqual(sut.exibeAvancar, false)
+    }
+    
+    func testProximaRodadaChamaAPIClientComARotaCerta() {
+        var routeRecebida: AppRoute?
+        
+        apiClientMock._request = { route, completion in
+            routeRecebida = route
+        }
+        
+        sut.rodada = 1
+        sut.proximaRodada()
+        
+        XCTAssertEqual(routeRecebida, AppRoute.jogos(rodada: 2))
     }
     
 //  perguntar se é necessário

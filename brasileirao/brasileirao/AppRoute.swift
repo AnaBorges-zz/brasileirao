@@ -15,7 +15,7 @@ protocol RouteAPI{
     var parameters: [String : Any] { get }
 }
 
-enum AppRoute : RouteAPI{
+enum AppRoute : RouteAPI, Equatable{
     
     case login(login: String, password: String)
     case jogos(rodada: Int)

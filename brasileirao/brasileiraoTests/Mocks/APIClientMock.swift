@@ -12,13 +12,15 @@ import Foundation
 class APIClientMock : APIClientProtocol {
     
     let retornoLogin = "{ token: hfkjdshkjhsdjhfskd }".data(using: .utf8)
+    var _request: ((AppRoute, @escaping (Data?, APIError?) -> Void) -> Void)?
     
     func request(route: AppRoute, completion: @escaping (Data?, APIError?) -> Void) {
-        if route.path == "/login" {
-            completion(retornoLogin, nil)
-            return
-        }
-        completion(nil, nil)
+        _request?(route, completion)
+//        if route.path == "/login" {
+//            completion(retornoLogin, nil)
+//            return
+//        }
+//        completion(nil, nil)
     }
     
 }
