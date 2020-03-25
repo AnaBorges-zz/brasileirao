@@ -60,15 +60,30 @@ class ListaJogosViewModelTest : XCTestCase {
         XCTAssertEqual(routeRecebida, AppRoute.jogos(rodada: 2))
     }
     
-//  perguntar se é necessário
-//    func testAvancarHabilitado(){
-//        sut.rodada = 1
-//        XCTAssertEqual(sut.exibeAvancar, true)
-//    }
-//    func testVoltarHabilitado(){
-//           sut.rodada = 2
-//           XCTAssertEqual(sut.exibeVoltar, true)
-//       }
-    
+    func testProximaRodadaChamaDelegateSeDecodificarJogos(){
+        let delegateMock = DelegateListaJogosMock()
+        
+        //var rodadaAlteradaExpectation = expectation(description: "Rodada alterada foi chamada")
+        
+        var rodadaFoiAlterada = false
+        
+        sut.delegate = delegateMock
+        
+        apiClientMock._request = { route, completion in
+            completion(MockJson.jogosJson(), nil)
+        }
+        
+        delegateMock._rodadaAlterada = {
+            //rodadaAlteradaExpectation.fulfill()
+            rodadaFoiAlterada = true
+        }
+        
+        sut.rodada = 1
+        sut.proximaRodada()
+        
+        //wait(for: [rodadaAlteradaExpectation], timeout: 1)
+        XCTAssertTrue(rodadaFoiAlterada)
+        
+    }
     
 }

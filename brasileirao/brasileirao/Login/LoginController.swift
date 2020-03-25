@@ -32,7 +32,7 @@ class LoginController: UIViewController {
 }
 
 extension LoginController : LoginViewModelDelegate {
-    func logado() {
+    func logar() {
         let msgErro = viewModel?.msgErro
         
         if msgErro == nil {

@@ -54,8 +54,11 @@ class APIClient : APIClientProtocol{
         }
 
         if response.statusCode >= 200 && response.statusCode <= 299, let data = data {
-            completion(data, nil)
+            DispatchQueue.main.async {
+                completion(data, nil)
+            }
             print("response: \(response.statusCode)")
+            
         }
        else {
             

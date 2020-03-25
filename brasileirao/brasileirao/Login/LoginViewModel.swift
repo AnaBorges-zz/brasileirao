@@ -17,7 +17,7 @@ protocol LoginViewModelProtocol: class {
 }
 
 protocol LoginViewModelDelegate: class {
-    func logado()
+    func logar()
 }
 
 class LoginViewModel : LoginViewModelProtocol{
@@ -41,7 +41,7 @@ class LoginViewModel : LoginViewModelProtocol{
             }
             else {
                 msgErro = "Preencha todos os campos!"
-                self.delegate?.logado()
+                self.delegate?.logar()
 
             }
         }
@@ -56,7 +56,7 @@ class LoginViewModel : LoginViewModelProtocol{
                 if error == APIError.notFound {
                     DispatchQueue.main.async {
                         self.msgErro = "Usuário ou senha incorretos!"
-                        self.delegate?.logado()
+                        self.delegate?.logar()
                     }
                 }
                 
@@ -70,10 +70,10 @@ class LoginViewModel : LoginViewModelProtocol{
             do {
                 let token = try JSONDecoder().decode([LoginResponse].self, from: data)
                 UserDefaults.standard.setValue(token.first?.token, forKey: "token")
-                DispatchQueue.main.async {
+                
                     self.msgErro = nil
-                    self.delegate?.logado()
-                }
+                    self.delegate?.logar()
+                
             } catch {
                 print(error)
             }
