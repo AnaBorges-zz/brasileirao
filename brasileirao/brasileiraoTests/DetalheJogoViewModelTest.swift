@@ -43,7 +43,7 @@ class DetalheJogoViewModelTest: XCTestCase{
         XCTAssertEqual(routeRecebida, AppRoute.ficha(jogo: jogoSelecionado.id))
     }
     
-    func testeConsultaLancesChamadaAPIClentComARotaCerta(){
+    func testeConsultaLancesChamadaAPIClientComARotaCerta(){
         var routeRecebida: AppRoute?
         
         apiClientMock._request = {route, completin in
@@ -63,7 +63,7 @@ class DetalheJogoViewModelTest: XCTestCase{
         sut.delegate = delegateMock
 
         apiClientMock._request = { route, completion in
-            completion(MockJson.jogoSelecionadoJson(), nil)
+            completion(MockJson.fichaJogoSelecionado(), nil)
         }
 
         delegateMock._mostrarFichaJogo = {
@@ -75,24 +75,24 @@ class DetalheJogoViewModelTest: XCTestCase{
         XCTAssertTrue(fichaMostrada)
     }
     
-//    func testConsultaLancesChamaDelegateSeDecodificarLances(){
-//        let delegateMock = DelegateDetalheJogoMock()
-//
-//        var lancesMostrados = false
-//
-//        sut.delegate = delegateMock
-//
-//        apiClientMock._request = {route, completion in
-//            completion(MockJson.lancesJogoSelecionadoJson(), nil)
-//        }
-//
-//        delegateMock._mostarFichaJogo = {
-//            lancesMostrados = true
-//        }
-//
-//        sut.consultaLances()
-//
-//        XCTAssert(lancesMostrados)
-//    }
+    func testConsultaLancesChamaDelegateSeDecodificarLances(){
+        let delegateMock = DelegateDetalheJogoMock()
+
+        var lancesMostrados = false
+
+        sut.delegate = delegateMock
+
+        apiClientMock._request = {route, completion in
+            completion(MockJson.lancesJogoSelecionado(), nil)
+        }
+
+        delegateMock._mostrarLancesJogo = {
+            lancesMostrados = true
+        }
+
+        sut.consultaLances()
+
+        XCTAssert(lancesMostrados)
+    }
     
 }

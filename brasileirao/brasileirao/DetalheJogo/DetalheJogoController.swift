@@ -213,10 +213,7 @@ extension DetalheJogoController : DetalheJogoViewModelDelegate {
     func exibirErro(msg: String) {
         let alert = UIAlertController(title: "Alert", message: msg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Voltar", style: .default, handler: { _ in
-//            self.segmentedControlDetalhes.selectedSegmentIndex = 0
-//            self.viewModel?.consultaLances()
-            self.navigationController?.popViewController(animated: true)
-            
+            self.navigationController?.popViewController(animated: true)            
         }))
 
         DispatchQueue.main.async {

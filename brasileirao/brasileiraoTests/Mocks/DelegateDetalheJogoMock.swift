@@ -11,11 +11,10 @@ import Foundation
 
 class DelegateDetalheJogoMock: DetalheJogoViewModelDelegate{
     
-    var _mostrarFichaJogo :(() -> Void)?
-    var _mostrarLancesJogo :(() -> Void)?
-    var _exibirErro :(() -> Void)?
+    var _mostrarFichaJogo : (() -> Void)?
+    var _mostrarLancesJogo : (() -> Void)?
+    var _exibirErro : ((_ msg:String) -> Void)?
 
-    
     func mostrarFichaJogo() {
         _mostrarFichaJogo?()
     }
@@ -25,7 +24,7 @@ class DelegateDetalheJogoMock: DetalheJogoViewModelDelegate{
     }
     
     func exibirErro(msg: String) {
-        _exibirErro?()
+        _exibirErro?(msg)
     }
     
     

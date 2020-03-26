@@ -54,10 +54,8 @@ class LoginViewModel : LoginViewModelProtocol{
                 print(error)
                 
                 if error == APIError.notFound {
-                    DispatchQueue.main.async {
                         self.msgErro = "Usuário ou senha incorretos!"
                         self.delegate?.logar()
-                    }
                 }
                 
                 return

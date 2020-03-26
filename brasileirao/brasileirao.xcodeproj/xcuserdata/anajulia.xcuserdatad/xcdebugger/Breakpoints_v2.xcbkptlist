@@ -23,113 +23,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F38FB66C-EF2D-4E21-A5F6-DF1ED12E20CE"
+            uuid = "ABC28EC1-4B3D-4716-BE30-E3B9A280B0E7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "brasileiraoTests/DetalheJogoViewModelTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "DetalheJogoViewModelTest"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D6CC513E-292A-4AD5-9F97-C436B17DF767"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "brasileirao/DetalheJogo/DetalheJogoController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
-            landmarkName = "mostrarFichaJogo()"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "testConsultaLancesChamaDelegateSeDecodificarLances()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "413E2946-D52A-46D7-A1EA-AC5A9C14FEE9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "brasileirao/DetalheJogo/DetalheJogoViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "consultaFicha()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2C5A0F0A-BF7C-4CC2-9EEB-8B416F7D9E97"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "brasileirao/DetalheJogo/DetalheJogoViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "consultaFicha()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0AA1D34E-DD99-4609-BA61-CE6AABF07B07"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "brasileirao/DetalheJogo/DetalheJogoViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "consultaFicha()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "84E866C6-AE38-45E9-9C00-187FAADFF971"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "brasileirao/DetalheJogo/DetalheJogoViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "consultaFicha()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E89908EA-620D-4B4F-A264-E76F18BF8AF8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "brasileirao/DetalheJogo/DetalheJogoViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "consultaFicha()"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "ABC28EC1-4B3D-4716-BE30-E3B9A280B0E7 - 531421b3f1f9fd94"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "brasileiraoTests.DetalheJogoViewModelTest.testConsultaLancesChamaDelegateSeDecodificarLances() -&gt; ()"
+                  moduleName = "brasileiraoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anajulia/Documents/brasileirao/brasileirao/brasileiraoTests/DetalheJogoViewModelTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "420">
+               </Location>
+               <Location
+                  uuid = "ABC28EC1-4B3D-4716-BE30-E3B9A280B0E7 - fd18d881fe603601"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (brasileirao.AppRoute, (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;brasileirao.APIError&gt;) -&gt; ()) -&gt; () in brasileiraoTests.DetalheJogoViewModelTest.testConsultaLancesChamaDelegateSeDecodificarLances() -&gt; ()"
+                  moduleName = "brasileiraoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anajulia/Documents/brasileirao/brasileirao/brasileiraoTests/DetalheJogoViewModelTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

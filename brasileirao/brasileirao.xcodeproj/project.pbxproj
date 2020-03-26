@@ -23,6 +23,7 @@
 		7034B9FB241C05570047B494 /* LoginViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7034B9FA241C05570047B494 /* LoginViewModelTest.swift */; };
 		7034B9FE241C0A610047B494 /* APIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7034B9FD241C0A610047B494 /* APIClientMock.swift */; };
 		7034BA00241FD49F0047B494 /* ListaJogosViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7034B9FF241FD49F0047B494 /* ListaJogosViewModelTest.swift */; };
+		70386FDF242CE1930090B4E0 /* DelegateLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70386FDE242CE1930090B4E0 /* DelegateLoginViewModel.swift */; };
 		703EC3A3240D6BC000C673BC /* FichaJogoInformacaoTableViewCwll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703EC3A2240D6BC000C673BC /* FichaJogoInformacaoTableViewCwll.swift */; };
 		7046FDCA2423F56A0007F401 /* MockJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7046FDC92423F56A0007F401 /* MockJson.swift */; };
 		7046FDCC2423F7A40007F401 /* DelegateListaJogosMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7046FDCB2423F7A40007F401 /* DelegateListaJogosMock.swift */; };
@@ -68,6 +69,7 @@
 		7034B9FA241C05570047B494 /* LoginViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTest.swift; sourceTree = "<group>"; };
 		7034B9FD241C0A610047B494 /* APIClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientMock.swift; sourceTree = "<group>"; };
 		7034B9FF241FD49F0047B494 /* ListaJogosViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaJogosViewModelTest.swift; sourceTree = "<group>"; };
+		70386FDE242CE1930090B4E0 /* DelegateLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateLoginViewModel.swift; sourceTree = "<group>"; };
 		703EC3A2240D6BC000C673BC /* FichaJogoInformacaoTableViewCwll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaJogoInformacaoTableViewCwll.swift; sourceTree = "<group>"; };
 		7046FDC92423F56A0007F401 /* MockJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJson.swift; sourceTree = "<group>"; };
 		7046FDCB2423F7A40007F401 /* DelegateListaJogosMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateListaJogosMock.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				7046FDC92423F56A0007F401 /* MockJson.swift */,
 				7046FDCB2423F7A40007F401 /* DelegateListaJogosMock.swift */,
 				702AA9F6242941330094B14A /* DelegateDetalheJogoMock.swift */,
+				70386FDE242CE1930090B4E0 /* DelegateLoginViewModel.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				7034B9FE241C0A610047B494 /* APIClientMock.swift in Sources */,
 				7046FDCC2423F7A40007F401 /* DelegateListaJogosMock.swift in Sources */,
 				702142DA242510AD0088F576 /* DetalheJogoViewModelTest.swift in Sources */,
+				70386FDF242CE1930090B4E0 /* DelegateLoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

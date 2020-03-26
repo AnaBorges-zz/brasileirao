@@ -10,14 +10,14 @@ import XCTest
 @testable import brasileirao
 
 class LoginViewModelTest: XCTestCase {
-    
-    var sut : LoginViewModelProtocol!
+    var apiClientMock : APIClientMock!
+    var sut : LoginViewModel!
     
     override func setUp() {
         super.setUp()
         
-        let apiClient = APIClientMock()
-        sut = LoginViewModel(apiClient: apiClient)
+        apiClientMock = APIClientMock()
+        sut = LoginViewModel(apiClient: apiClientMock)
     }
 
     override func tearDown() {
@@ -42,6 +42,36 @@ class LoginViewModelTest: XCTestCase {
     func testLoginSucess() {
         sut.logar(email: "xxxx", senha: "yyy")
         XCTAssertNil(sut.msgErro)
+    }
+    
+    func testLogarChamadaAPIClientComARotaCerta(){
+        var routeRecebida: AppRoute?
+        
+        apiClientMock._request = {route, completion in
+            routeRecebida = route
+        }
+        
+        sut.logar(email: "xxx", senha: "000")
+        
+        XCTAssertEqual(routeRecebida, AppRoute.login(login: "xxx", password: "000"))
+    }
+    
+    func testLogarChamaDelegateLogar(){
+        let delegateMock = DelegateLoginMock()
+        
+        var logado = false
+        
+        sut.delegate = delegateMock
+        
+        apiClientMock._request = {route, completion in
+            completion(MockJson.loginJson(),nil)
+        }
+        
+        delegateMock._logar = {
+            logado = true
+        }
+        
+        sut.logar(email: "xxx", senha: "000")
     }
     
 }
