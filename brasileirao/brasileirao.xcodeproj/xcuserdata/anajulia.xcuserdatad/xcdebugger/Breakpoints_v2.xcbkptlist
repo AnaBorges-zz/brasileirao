@@ -7,17 +7,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1DDA8A47-105A-4E79-BA96-4952C83F39F8"
+            uuid = "26F9C7E7-80C5-482A-BB8B-4FC72B164A44"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "brasileirao/DetalheJogo/DetalheJogoController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "numberOfSections(in:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ABC28EC1-4B3D-4716-BE30-E3B9A280B0E7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "brasileirao/Login/LoginViewModel.swift"
+            filePath = "brasileiraoTests/DetalheJogoViewModelTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "LoginViewModelDelegate"
-            landmarkType = "5">
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "testConsultaLancesChamaDelegateSeDecodificarLances()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "ABC28EC1-4B3D-4716-BE30-E3B9A280B0E7 - 531421b3f1f9fd94"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "brasileiraoTests.DetalheJogoViewModelTest.testConsultaLancesChamaDelegateSeDecodificarLances() -&gt; ()"
+                  moduleName = "brasileiraoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anajulia/Documents/brasileirao/brasileirao/brasileiraoTests/DetalheJogoViewModelTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "420">
+               </Location>
+               <Location
+                  uuid = "ABC28EC1-4B3D-4716-BE30-E3B9A280B0E7 - fd18d881fe603601"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (brasileirao.AppRoute, (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;brasileirao.APIError&gt;) -&gt; ()) -&gt; () in brasileiraoTests.DetalheJogoViewModelTest.testConsultaLancesChamaDelegateSeDecodificarLances() -&gt; ()"
+                  moduleName = "brasileiraoTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anajulia/Documents/brasileirao/brasileirao/brasileiraoTests/DetalheJogoViewModelTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

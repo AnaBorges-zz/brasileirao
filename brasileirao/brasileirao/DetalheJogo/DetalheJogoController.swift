@@ -78,12 +78,13 @@ class DetalheJogoController: UITableViewController{
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if segmentSelected == 0 { return 1 }
+        
+        if segmentedControlDetalhes.selectedSegmentIndex == 0 { return 1 }
         else { return 3 }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         if numberOfSections(in: tableView) == 1 { return viewModel?.lances.count ?? 0}
                 
         switch section {
@@ -101,7 +102,7 @@ class DetalheJogoController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        if segmentSelected == 0 { return nil }
+        if segmentedControlDetalhes.selectedSegmentIndex == 0 { return nil }
         switch section {
             case 0:
                 return "Informações Gerais"
@@ -121,7 +122,7 @@ class DetalheJogoController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+            
         if segmentedControlDetalhes.selectedSegmentIndex == 0 {
            return lanceCell(indexPath: indexPath)
         } else {
@@ -150,7 +151,7 @@ class DetalheJogoController: UITableViewController{
 
     func fichaCell(indexPath: IndexPath) -> UITableViewCell {
         guard let fichaJogo = viewModel?.ficha else {return UITableViewCell()}
-
+        
         if indexPath.section == 0 {
             return cellInformacaoAdicional(indexPath: indexPath, fichaJogo: fichaJogo)
             
@@ -189,9 +190,9 @@ class DetalheJogoController: UITableViewController{
        var jogadorVisitante : Jogador
        
        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellFichaJogador", for: indexPath) as? FichaJogoTableViewCell else {return UITableViewCell()}
-       
+        
        switch indexPath.section {
-           
+                   
            case 1:
                jogadorCasa = (fichaJogo.timeCasa.jogadores[indexPath.row])
                jogadorVisitante = (fichaJogo.timeVisitante.jogadores[indexPath.row])
@@ -212,10 +213,7 @@ extension DetalheJogoController : DetalheJogoViewModelDelegate {
     func exibirErro(msg: String) {
         let alert = UIAlertController(title: "Alert", message: msg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Voltar", style: .default, handler: { _ in
-//            self.segmentedControlDetalhes.selectedSegmentIndex = 0
-//            self.viewModel?.consultaLances()
-            self.navigationController?.popViewController(animated: true)
-            
+            self.navigationController?.popViewController(animated: true)            
         }))
 
         DispatchQueue.main.async {

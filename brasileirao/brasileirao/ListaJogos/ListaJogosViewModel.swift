@@ -16,7 +16,7 @@ protocol ListaJogosViewModelProtocol: class{
     func proximaRodada()
     func rodadaAnterior()
     func selecionaJogo(index: Int)
-    init(apiClient: APIClient)
+    init(apiClient: APIClientProtocol)
 }
 
 protocol ListaJogosViewModelDelegate: class {
@@ -32,11 +32,11 @@ class ListaJogosViewModel : ListaJogosViewModelProtocol{
     var exibeVoltar: Bool = false
     var exibeAvancar: Bool = false
     
-    private let apiClient: APIClient
+    private let apiClient: APIClientProtocol
     
     weak var delegate : ListaJogosViewModelDelegate?
     
-    required init(apiClient: APIClient){
+    required init(apiClient: APIClientProtocol){
         self.apiClient = apiClient
     }
     
@@ -60,30 +60,27 @@ class ListaJogosViewModel : ListaJogosViewModelProtocol{
     }
     
     private func mostrarRodada(rodada: Int){
-        let route = AppRoute.jogos(rodada: rodada)
-               
-               apiClient.request(route: route) { (data, error) in
-                   if let error = error{
-                       print(error)
-                       return
-                   }
-                   
-                   guard let data = data else { return }
-                   
-                   do{
-                       let jogos = try JSONDecoder().decode([JogoModel].self, from: data)
-                       self.jogos = jogos
-                                                       
-                       DispatchQueue.main.async {
-                            self.configuraNavigation()
-                            self.delegate?.rodadaAlterada()
-                       }
-                   }
-                   catch{
-                       print(error)
-                   }
-                }
+    let route = AppRoute.jogos(rodada: rodada)
+       
+       apiClient.request(route: route) { (data, error) in
+           if let error = error{
+               print(error)
+               return
+           }
+           
+           guard let data = data else { return }
+           
+           do{
+                let jogos = try JSONDecoder().decode([JogoModel].self, from: data)
+                self.jogos = jogos
+                self.configuraNavigation()
+                self.delegate?.rodadaAlterada()
+           }
+           catch{
+               print(error)
+           }
         }
+    }
     
         func configuraNavigation(){
             titulo = "\(rodada)º rodada"

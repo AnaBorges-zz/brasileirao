@@ -8,7 +8,14 @@
 
 import Foundation
 
-enum AppRoute : RouteAPI{
+protocol RouteAPI{
+    var path: String { get }
+    var metod: String { get }
+    var headers: [String : Any] { get }
+    var parameters: [String : Any] { get }
+}
+
+enum AppRoute : RouteAPI, Equatable{
     
     case login(login: String, password: String)
     case jogos(rodada: Int)

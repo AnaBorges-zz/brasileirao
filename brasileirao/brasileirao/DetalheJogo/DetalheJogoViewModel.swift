@@ -13,7 +13,7 @@ protocol DetalheJogoViewModelProtocol: class{
     var lances: [LanceALanceModel] { get }
     var ficha: FichaModel? { get }
     var jogoSelecionado: JogoModel? { get }
-    init(apiClient: APIClient, jogo: JogoModel)
+    init(apiClient: APIClientProtocol, jogo: JogoModel)
     
 }
 
@@ -24,20 +24,18 @@ protocol DetalheJogoViewModelDelegate: class {
 }
 
 class DetalheJogoViewModel : DetalheJogoViewModelProtocol{
-    //var idJogo: Int = 1
     var lances: [LanceALanceModel] = []
     var ficha: FichaModel?
     var jogoSelecionado: JogoModel?
 
-    private let apiClient : APIClient
+    private let apiClient : APIClientProtocol
 
     weak var delegate: DetalheJogoViewModelDelegate?
 
-    required init(apiClient: APIClient, jogo: JogoModel) {
+    required init(apiClient: APIClientProtocol, jogo: JogoModel) {
         self.apiClient = apiClient
         self.jogoSelecionado = jogo
         consultaLances()
-        
     }
 
     func consultaFicha() {
@@ -62,10 +60,7 @@ class DetalheJogoViewModel : DetalheJogoViewModelProtocol{
             do{
                 let ficha = try JSONDecoder().decode(FichaModel.self, from: data)
                 self.ficha = ficha
-                
-                DispatchQueue.main.async {
-                    self.delegate?.mostrarFichaJogo()
-                }
+                self.delegate?.mostrarFichaJogo()
                 
             } catch {
                 self.delegate?.exibirErro(msg: error.localizedDescription)
@@ -96,14 +91,11 @@ class DetalheJogoViewModel : DetalheJogoViewModelProtocol{
                 let lance = try JSONDecoder().decode([LanceALanceModel].self, from: data)
                 self.lances = lance
 
-                DispatchQueue.main.async {
-                    self.delegate?.mostrarLanceALance()
-                }
+                self.delegate?.mostrarLanceALance()
 
             }catch{
                 self.delegate?.exibirErro(msg: error.localizedDescription)
             }
         }
     }
-
 }

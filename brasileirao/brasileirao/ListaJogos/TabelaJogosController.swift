@@ -36,13 +36,6 @@ class TabelaJogosController: UITableViewController{
         viewModel?.rodadaAnterior()
     }
     
-    func mudarRodada(rodada: Int){
-        rodadasBar.leftBarButtonItem?.isEnabled = rodada > 1
-        rodadasBar.rightBarButtonItem?.isEnabled = rodada < 3
-        
-    }
-    
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.jogos.count ?? 0
     }

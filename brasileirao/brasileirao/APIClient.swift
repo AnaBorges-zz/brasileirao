@@ -15,7 +15,11 @@ enum APIError: Error {
     case undefined
 }
 
-class APIClient{
+protocol APIClientProtocol {
+    func request(route: AppRoute, completion: @escaping (_ data: Data?, _ error: APIError?) -> Void)
+}
+
+class APIClient : APIClientProtocol{
     private let basePath = "https://private-62ae5-brasileirao8.apiary-mock.com/"
     
     lazy private var session: URLSession = {
@@ -27,7 +31,6 @@ class APIClient{
     func request(route: AppRoute, completion: @escaping (_ data: Data?, _ error: APIError?) -> Void) {
         
         guard let url = URL(string: basePath + route.path) else {
-            let error = NSError(domain: "com.myCompany.brasileirao", code: 500, userInfo: nil)
             completion(nil, APIError.urlParse)
             return
         }
@@ -51,8 +54,9 @@ class APIClient{
         }
 
         if response.statusCode >= 200 && response.statusCode <= 299, let data = data {
-            completion(data, nil)
-            print("response: \(response.statusCode)")
+            DispatchQueue.main.async {
+                completion(data, nil)
+            }            
         }
        else {
             

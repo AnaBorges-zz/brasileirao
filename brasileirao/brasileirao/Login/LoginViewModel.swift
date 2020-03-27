@@ -13,16 +13,16 @@ protocol LoginViewModelProtocol: class {
     var senha: String? { get }
     var msgErro: String? { get }
     func logar(email: String, senha: String)
-    init(apiClient: APIClient)
+    init(apiClient: APIClientProtocol)
 }
 
 protocol LoginViewModelDelegate: class {
-    func logado()
+    func logar()
 }
 
 class LoginViewModel : LoginViewModelProtocol{
     
-    private let apiClient : APIClient
+    private let apiClient : APIClientProtocol
     
     weak var delegate: LoginViewModelDelegate?
     
@@ -30,7 +30,7 @@ class LoginViewModel : LoginViewModelProtocol{
     var senha : String?
     var msgErro: String?
     
-    required init(apiClient: APIClient){
+    required init(apiClient: APIClientProtocol){
         self.apiClient = apiClient
     }
     
@@ -41,7 +41,7 @@ class LoginViewModel : LoginViewModelProtocol{
             }
             else {
                 msgErro = "Preencha todos os campos!"
-                self.delegate?.logado()
+                self.delegate?.logar()
 
             }
         }
@@ -54,10 +54,8 @@ class LoginViewModel : LoginViewModelProtocol{
                 print(error)
                 
                 if error == APIError.notFound {
-                    DispatchQueue.main.async {
                         self.msgErro = "Usuário ou senha incorretos!"
-                        self.delegate?.logado()
-                    }
+                        self.delegate?.logar()
                 }
                 
                 return
@@ -70,10 +68,10 @@ class LoginViewModel : LoginViewModelProtocol{
             do {
                 let token = try JSONDecoder().decode([LoginResponse].self, from: data)
                 UserDefaults.standard.setValue(token.first?.token, forKey: "token")
-                DispatchQueue.main.async {
+                
                     self.msgErro = nil
-                    self.delegate?.logado()
-                }
+                    self.delegate?.logar()
+                
             } catch {
                 print(error)
             }
